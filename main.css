@@ -15,10 +15,6 @@
     color: black;
 }
 
-.right {
-    display: inline;
-}
-
 .navbar {
     display: flex;
     background-color: #75a4c5;
@@ -55,26 +51,6 @@
     color: white;
 }
 
-.search {
-    float: right;
-    color: white;
-    padding: 12px 40px;
-}
-
-.btn-sm{
-    border: 1px solid white;
-    border-radius: 8px;
-}
-
-.navbar input {
-    border: 2px solid black;
-    border-radius: 14px;
-    padding: 3px 17px;
-    width: 129px;
-}
-
-/* carousel */
-
 /* Import Google font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
@@ -94,7 +70,6 @@
     background: #724ae8;
     transition: all 0.2s ease;
 }
-
 
 .show-chatbot .chatbot-toggler {
     transform: rotate(360deg);
