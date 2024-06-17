@@ -67,3 +67,7 @@ h2 {
 .forgot-password:hover {
     text-decoration: underline;
 }
+
+a{
+    text-decoration: none;
+}
