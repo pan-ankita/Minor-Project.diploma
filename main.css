@@ -276,6 +276,9 @@ header h2 {
 }
 
 /* footer */
+footer{
+    background-color: #798ae9;
+}
 footer ul {
     display: inline-block;
 }
@@ -287,10 +290,16 @@ footer li {
 }
 
 footer li a {
+    color: black;
     padding: 3px 3px;
     text-decoration: none;
 }
 
+footer li a:hover{
+    cursor:pointer;
+    font-weight: bold;
+    color: white;
+}
 fa-arrow-up:before {
     content: "\f062";
 }

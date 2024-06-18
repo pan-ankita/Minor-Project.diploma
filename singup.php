@@ -1,3 +1,45 @@
+<?php
+$insert = false;
+if(isset($_POST['name'])){
+	// Set connection variables
+	$server = "localhost";
+	$username = "root";
+	$pssword = "";
+	
+	// Create a DB connection
+	$con = mysqli_connect($server, $username);
+    // $password);
+	
+	// Check for connection success
+	if (!$con){
+		die("Connection to this DB failed due to ". mysqli_connect_error());
+	}
+	// echo "Success connecting to the DB.";
+	
+	// Collect post variables
+	$name = $_POST['name'];
+	$sem = $_POST['sem'];
+	$regnum = $_POST['regnum'];
+	$dept = $_POST['dept'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+    $sql = "INSERT INTO `college`.`student` (`name`, `sem`, `regnum`, `dept`, `phone`, `email`, `time`) VALUES ('$name', '$sem', '$regnum', '$dept', '$phone', '$email', current_timestamp());";
+
+	// Executing the DB
+	if($con->query($sql) == true){
+        // echo "Successfully inserted";
+		$insert = true; 
+        // (2:19:00 watch)
+	}
+	else{
+        echo "ERROR: $sql <br> $con->error";
+    }
+
+	// Closing the connection
+	$con->close();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -113,7 +155,7 @@
             </div>
             <div class="form-group">
                 <label for="regNumber">Registration Number</label>
-                <input type="text" id="regNumber" name="regNumber" placeholder="Enter your registration number"
+                <input type="text" id="regNumber" name="regnum" placeholder="Enter your registration number"
                     required>
             </div>
             <div class="form-group">
