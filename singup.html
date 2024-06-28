@@ -49,13 +49,21 @@ if(isset($_POST['name'])){
     <style>
         body {
             font-family: 'Times New Roman', Times, serif, sans-serif;
-            background: linear-gradient(to right,#1b4769,#97bcd7, #cadbe7 ); /* Blue gradient background */
+            background: linear-gradient(to right, #1b4769, #97bcd7, #cadbe7);
+            /* Blue gradient background */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             /* Set the height of the viewport */
             margin: 0;
+        }
+
+        h2 {
+            color: #3d418c;
+            /* Dark grey color for the heading */
+            margin-bottom: 20px;
+            text-align: center;
         }
 
         .Signup-container {
@@ -71,7 +79,10 @@ if(isset($_POST['name'])){
         }
 
         .form-group label {
-            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #013e53;
+            /* Light grey color for labels */
         }
 
         .form-group input {
@@ -103,7 +114,7 @@ if(isset($_POST['name'])){
             background-color: #89baee;
         }
 
-        .styled-select select{
+        .styled-select select {
             width: 450px;
             padding: 10px;
             border: 1px solid #ccc;
@@ -154,20 +165,19 @@ if(isset($_POST['name'])){
             </div>
             <div class="form-group">
                 <label for="regNumber">Registration Number</label>
-                <input type="text" id="regNumber" name="regnum" placeholder="Enter your registration number"
-                    required>
+                <input type="text" id="regNumber" name="regnum" placeholder="Enter your registration number" required>
             </div>
             <div class="form-group">
                 <label for="department">Department</label>
-                    <div class="styled-select">
-                        <select id="department" name="dept">
-                            <option value="dept">Select your department</option>
-                            <option value="CST">Computer Science & Technology</option>
-                            <option value="ETCE">Electronics & Telecommunications</option>
-                            <option value="EE">Electrical Engineering</option>
-                            <option value="ME">Mechanical Engineering</option>
-                        </select>
-                    </div>
+                <div class="styled-select">
+                    <select id="department" name="dept">
+                        <option value="dept">Select your department</option>
+                        <option value="CST">Computer Science & Technology</option>
+                        <option value="ETCE">Electronics & Telecommunications</option>
+                        <option value="EE">Electrical Engineering</option>
+                        <option value="ME">Mechanical Engineering</option>
+                    </select>
+                </div>
             </div>
             <div class="form-group">
                 <label for="phone">Phone Number</label>
@@ -182,43 +192,44 @@ if(isset($_POST['name'])){
             </div>
         </form>
     </div>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
 </body>
+
 </html>
